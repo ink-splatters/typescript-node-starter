@@ -1,0 +1,26 @@
+{
+  "name": "node-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": "Aro Andriamaro",
+  "license": "ISC",
+  "engines": {
+    "node": "20"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.28",
+    "nodemon": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "openai": "^4.29.1"
+  }
+}
