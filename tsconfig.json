@@ -1,12 +1,23 @@
 {
   "compilerOptions": {
-    "allowJs": true,
+    /* Base Options: */
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    /* If transpiling with TypeScript: */
+    "moduleResolution": "NodeNext",
     "module": "NodeNext",
     "outDir": "dist",
-    "skipLibCheck": true,
-    "strict": true
+    "sourceMap": true,
+    /* If your code doesn't run in the DOM: */
+    "lib": ["es2022"]
   },
-  "include": ["./src/**/*.ts"]
+  "include": ["src/**/*"]
 }

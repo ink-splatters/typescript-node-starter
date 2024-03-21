@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+  "type": "module",
   "scripts": {
     "build": "rimraf dist && tsc",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "Aro Andriamaro",
