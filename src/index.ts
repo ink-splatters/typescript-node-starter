@@ -1,6 +1,6 @@
 import Fastify from "fastify";
 import closeWithGrace from "close-with-grace";
-// import { summarize } from "src/lib/summarize.js";
+import { summarize } from "src/lib/summarize.js";
 
 const app = Fastify({
   logger: {
@@ -16,11 +16,12 @@ app.get("/", function () {
   return { hello: "world" };
 });
 
-// app.post("/summarize", async function (request, reply) {
-//   const stream = await summarize(request.body.input);
-//   reply.header("Content-Type", "application/octet-stream");
-//   return reply.send(stream);
-// });
+app.post("/summarize", async function (request, reply) {
+  const { input } = request.body as { input: string };
+  const stream = await summarize(input);
+  reply.header("Content-Type", "application/octet-stream");
+  return reply.send(stream);
+});
 
 app.listen({ port: 8080, host: "0.0.0.0" }, function (err, address) {
   if (err) {
